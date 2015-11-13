@@ -14,7 +14,7 @@ CMakeLists.txt.user
 *.*.autosave
 *.cpp~
 *.hpp~
-maps/
+*.pgm
 *.*~
 *.*.save
 *.rviz
