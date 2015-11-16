@@ -10,4 +10,6 @@
   <node name="sicktoolbox_wrapper" pkg="sicktoolbox_wrapper" type="sicklms" args="_port:=/dev/ttyUSB1">
   </node>  
   
+<!-- Starting laser tf -->
+ <node name="RosAriaLaserTf" pkg="localization" type="RosAriaLaserTf.py" />
 </launch>
