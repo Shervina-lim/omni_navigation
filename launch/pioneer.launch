@@ -11,5 +11,5 @@
   </node>  
   
 <!-- Starting laser tf -->
- <node name="RosAriaLaserTf" pkg="localization" type="RosAriaLaserTf.py" />
+ <node name="RosAriaLaserTf" pkg="p3dx_navigation" type="RosAriaLaserTf.py" />
 </launch>
