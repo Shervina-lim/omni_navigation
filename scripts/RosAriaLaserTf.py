@@ -9,7 +9,9 @@ if __name__ == '__main__':
     br = tf.TransformBroadcaster()
     rate = rospy.Rate(10.0)
 
-    x = y = z = 0
+    x = 0.075 
+    y = 0.0
+    z = 0.145
     roll = pitch = yaw = 0
 
     while not rospy.is_shutdown():
