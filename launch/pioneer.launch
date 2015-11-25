@@ -7,7 +7,7 @@
   </node>
 
 <!-- Starting laser rosrun sicktoolbox_wrapper sicklms -->
-  <node name="sicktoolbox_wrapper" pkg="sicktoolbox_wrapper" type="sicklms" args="_port:=/dev/ttyUSB1">
+  <node name="sicktoolbox_wrapper" pkg="sicktoolbox_wrapper" type="sicklms" args="_port:=/dev/ttyUSB1 _scan_rate:=30">
   </node>  
   
 <!-- Starting laser tf -->
