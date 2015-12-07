@@ -1,5 +1,7 @@
 global_costmap:
   global_frame: /map
   robot_base_frame: /base_link #base_link
-  update_frequency: 5.0 #5.0 A freqüência em Hz de frequência com que o mapa global é atualizado com as informações do sensor
+  update_frequency: 2.5 #5.0 A freqüência em Hz de frequência com que o mapa global é atualizado com as informações do sensor
+  publish_frequency: 1.0 ##! não tinha
   static_map: true
+  

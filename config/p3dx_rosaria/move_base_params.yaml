@@ -1,0 +1,29 @@
+controller_frequency: 10
+#controller_patience: 15.0
+#oscillation_timeout: 10.0
+#oscillation_distance: 0.5
+
+
+TrajectoryPlannerROS:
+
+  controller_frequency: 10.0 #verificar
+  pdist_scale: 0.9
+
+  max_vel_x: 0.08 # 0.2
+  min_vel_x: 0.03 # 0.05
+  max_vel_theta: 0.5 #0.8
+  min_vel_theta: -0.5 #
+  min_in_place_vel_theta: 0.01 # 0.4
+
+  max_rotational_vel: 0.08 #0.15
+  min_in_place_rotational_vel: 0.01 #
+  
+  acc_lim_theta: 2.0 #2.0
+  acc_lim_x: 0.7 #2.0
+  acc_lim_y: 0.7 #2.0
+
+  meter_scoring: false##
+
+ 
+
+  holonomic_robot: false

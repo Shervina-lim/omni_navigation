@@ -7,7 +7,7 @@ if __name__ == '__main__':
     rospy.init_node('RosAriaLaserTf')
     print("Running...")
     br = tf.TransformBroadcaster()
-    rate = rospy.Rate(10.0)
+    rate = rospy.Rate(100.0)
 
     x = 0.075 
     y = 0.0
