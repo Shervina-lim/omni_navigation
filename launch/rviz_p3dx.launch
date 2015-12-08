@@ -1,12 +1,6 @@
 
 <launch>
 
-<!--===========TF laser=========-->
-
-
-
-
-
 <!--=======Iniciar RVIZ=============-->
   <arg name="model" default="$(find p3dx_description)/urdf/pioneer3dx.xml"/>
   <arg name="gui" default="False" />

@@ -1,7 +1,7 @@
 
 <launch>
 
-<!--========= Iniciando o gazebo===========-->
+<!--========= Start gazebo===========-->
 
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
     <arg name="paused" default="false" />
@@ -34,7 +34,6 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 
 
-
 <!--=======Iniciar RVIZ=============-->
   <arg name="model" default="$(find p3dx_description)/urdf/pioneer3dx.xml"/>
   <arg name="gui" default="False" />
@@ -42,10 +41,8 @@
   <param name="use_gui" value="$(arg gui)"/>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find p3dx_navigation)/config/navigation.rviz" />
 
-<!-- Run the map server -->
+   <!-- Run the map server -->
    <node name="map_server" pkg="map_server" type="map_server" args="$(find p3dx_navigation)/maps/wgmap.yaml" output="screen"/>
-
-
 
 </launch>
 

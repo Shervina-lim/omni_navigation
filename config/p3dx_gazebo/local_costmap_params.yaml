@@ -6,13 +6,9 @@ local_costmap:
   width: 5.0 #The width of the map in meters. 
   height: 5.0 #The height of the map in meters. 
   
-  static_map: false
-  rolling_window: true
-  resolution: 0.02 #
-  tranform_tolerance: 0.5
-  planner_frequency: 1.0
-  planner_patiente: 5.0
-
-
+  static_map: false #Whether or not to use the static map to initialize the costmap
+  rolling_window: true #Whether or not to use a rolling window version of the costmap.
+  resolution: 0.02 #The resolution of the map in meters/cell. 
+  
 
 # More information at http://wiki.ros.org/costmap_2d and http://wiki.ros.org/costmap_2d/flat
