@@ -5,7 +5,7 @@
    <node name="map_server" pkg="map_server" type="map_server" args="$(find p3dx_navigation)/maps/wgmap.yaml" output="screen"/>
   
    <!--- Run AMCL -->
-   <include file="$(find p3dx_navigation)/launch/amcl_diff_rosaria.launch" />
+   <include file="$(find p3dx_navigation)/launch/amcl_diff_gazebo.launch" />
 
    <!--<node name="amcl" pkg="amcl" type="amcl" output="screen"/>-->
   
