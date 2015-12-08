@@ -1,51 +1,55 @@
 <launch>
 <node pkg="amcl" type="amcl" name="amcl" output="screen">
-  <!-- Publish scans from best pose at a max of 10 Hz -->
+   
+  <!--Minimum allowed number of particles. -->
+  <param name="min_particles" value="500"/> 
+  <!--Maximum allowed number of particles. -->
+  <param name="max_particles" value="5000"/> 
+  
+  <!--Translational movement required before performing a filter update.--> 
+  <param name="update_min_d" value="0.1"/>
+  <!--Rotational movement required before performing a filter update. -->
+  <param name="update_min_a" value="0.1"/> 
+  <!--Number of filter updates required before resampling. -->
+  <param name="resample_interval" value="1"/>
+  <!--Number of filter updates required before resampling. -->
+  <param name="transform_tolerance" value="0.1" />
+ 
+  <!--Initial pose covariance (x*x), used to initialize filter with Gaussian distribution. -->
+  <param name="initial_cov_xx" value="0.03"/> 
+  <!--Initial pose covariance (y*y), used to initialize filter with Gaussian distribution. -->
+  <param name="initial_cov_yy" value="0.03"/>
+  <!--Initial pose covariance (yaw*yaw), used to initialize filter with Gaussian distribution. -->
+  <param name="initial_cov_aa" value="0.03"/>
+  <!--When set to true, AMCL will subscribe to the map topic rather than making a service call to receive its map. New in navigation XXXX-->
+  <param name="use_map_topic" value="false"/>
+
+
+  <!--Laser model parameters-->
+  <param name="laser_model_type" value="likelihood_field"/>
+  <!--How many evenly-spaced beams in each scan to be used when updating the filter. -->
+  <param name="laser_max_beams" value="90"/>
+  <!--Mixture weight for the z_hit part of the model. -->
+  <param name="laser_z_hit" value="0.95"/>
+  <!--Mixture weight for the z_rand part of the model. -->
+  <param name="laser_z_rand" value="0.05"/>
+  <!--Standard deviation for Gaussian model used in z_hit part of the model. -->
+  <param name="laser_sigma_hit" value="0.02"/>  
+  <!-- Maximum distance to do obstacle inflation on map, for use in likelihood_field model. -->
+  <param name="laser_likelihood_max_dist" value="2.0"/>
+
+
+  <!-- Odometery model parameters -->
+  <!--Which model to use, either "diff" or "omni". -->
   <param name="odom_model_type" value="diff"/>
-  
-  <param name="transform_tolerance" value="0.01" /><!-- teste -->
-  
-  <param name="gui_publish_rate" value="20.0"/>
-  <param name="laser_max_beams" value="60"/>
-  <param name="min_particles" value="500"/>
-  <param name="max_particles" value="5000"/>
-  <param name="kld_err" value="0.05"/>
-  <param name="kld_z" value="0.99"/>
-  
-  <!-- Alpha odometery model -->
   <!-- Noise in odometry is rotation estimate from the rotational component of the robot is motion-->
   <param name="odom_alpha1" value="0.05"/>
   <!-- Noise in odometry is rotation estimate from translational component of the robotis  motion-->
   <param name="odom_alpha2" value="0.05"/>
   <!-- Noise in odometry is translation estimate from the translational component of the robot is motion-->
-  <param name="odom_alpha3" value="0.01"/>
+  <param name="odom_alpha3" value="0.02"/>
   <!-- Noise in odometry is translation estimate from the rotational component of the robot is motion-->
   <param name="odom_alpha4" value="0.05"/>
-
-  <param name="laser_z_hit" value="0.95"/>
-  <param name="laser_z_rand" value="0.05"/>
-
-  <param name="laser_sigma_hit" value="0.01"/><!--0.05 -->
-  <param name="laser_lambda_short" value="0.1"/>
-  <param name="laser_model_type" value="likelihood_field"/>
-  <param name="laser_likelihood_max_dist" value="0.5"/> <!--2.0 -->
-
-  <!--<param name="laser_z_short" value="0.05"/>
-  <param name="laser_z_max" value="0.05"/>-->
-
-  <param name="update_min_d" value="0.1"/>
-  <param name="update_min_a" value="0.1"/>
-  <param name="odom_frame_id" value="odom"/>
-  <param name="resample_interval" value="1"/>
-  
-  <param name="recovery_alpha_slow" value="0.0"/>
-  <param name="recovery_alpha_fast" value="0.0"/>
-  
-  <param name="initial_cov_xx" value="0.03"/> 
-  <param name="initial_cov_yy" value="0.03"/>
-  <param name="initial_cov_aa" value="0.03"/>
-
-  <param name="use_map_topic" value="true"/>
 
 </node>
 </launch>

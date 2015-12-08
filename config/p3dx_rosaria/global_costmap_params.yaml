@@ -1,7 +1,9 @@
 global_costmap:
-  global_frame: /map
-  robot_base_frame: /base_link #base_link
-  update_frequency: 2.5 #5.0 A freqüência em Hz de frequência com que o mapa global é atualizado com as informações do sensor
-  publish_frequency: 1.0 ##! não tinha
-  static_map: true
-  
+  global_frame: /map #The global frame for the costmap to operate in. 
+  robot_base_frame: /base_link #The name of the frame for the base link of the robot. 
+  update_frequency: 2.5 #The frequency in Hz for the map to be updated.
+  publish_frequency: 1.0 #The frequency in Hz for the map to be publish display information. 
+
+
+
+# More information at http://wiki.ros.org/costmap_2d and http://wiki.ros.org/costmap_2d/flat 

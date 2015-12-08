@@ -1,16 +1,18 @@
 local_costmap:
-  global_frame: /map
-  robot_base_frame: /base_link #base_link
-  update_frequency: 5.0
-  publish_frequency: 5.0 #5.0 ####
+  global_frame: /map ##The global frame for the costmap to operate in. 
+  robot_base_frame: /base_link #The name of the frame for the base link of the robot. 
+  update_frequency: 5.0 #The frequency in Hz for the map to be updated.
+  publish_frequency: 5.0 #The frequency in Hz for the map to be publish display information. 
+  width: 5.0 #The width of the map in meters. 
+  height: 5.0 #The height of the map in meters. 
+  
   static_map: false
   rolling_window: true
-  width: 5.0
-  height: 5.0
   resolution: 0.02 #
   tranform_tolerance: 0.5
   planner_frequency: 1.0
   planner_patiente: 5.0
-#plugins:
-# {name: obstacles, type: "costmal_2d::ObstacleLayer",
-# name: inflation, type: "costmal_2d::InflationLayer"}
+
+
+
+# More information at http://wiki.ros.org/costmap_2d and http://wiki.ros.org/costmap_2d/flat
