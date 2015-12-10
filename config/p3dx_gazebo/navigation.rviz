@@ -27,7 +27,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -173,18 +173,73 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        center_hubcap:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        center_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_sonar:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lms100:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        p3dx_left_hubcap:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        p3dx_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        p3dx_right_hubcap:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        p3dx_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        swivel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        top_plate:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: false
+      Value: true
       Visual Enabled: true
     - Alpha: 0.7
       Class: rviz/Map
@@ -226,22 +281,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 15.366
+      Distance: 16.9621
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 2.73306
-        Y: 2.08964
-        Z: -3.4245
+        X: -2.51821
+        Y: -2.2625
+        Z: -3.63212
       Name: Current View
       Near Clip Distance: 0.01
       Pitch: 1.5698
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.94858
+      Yaw: 4.71359
     Saved: ~
 Window Geometry:
   Displays:

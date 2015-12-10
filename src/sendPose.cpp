@@ -20,9 +20,9 @@ int main(int argc, char** argv){
   //we'll send a goal to the robot to move
   goal.target_pose.header.frame_id = "map";
   goal.target_pose.header.stamp = ros::Time::now();
-
-  goal.target_pose.pose.position.x = -6.6;
-  goal.target_pose.pose.position.y = -5.1;
+  //entrada do ct-9 12.432 1.699
+  goal.target_pose.pose.position.x = 12.432;
+  goal.target_pose.pose.position.y = 1.699;
   goal.target_pose.pose.orientation.w = 1.0;
 
   ROS_INFO("Sending goal");

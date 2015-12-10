@@ -39,7 +39,7 @@
   <arg name="gui" default="False" />
   <param name="robot_description" textfile="$(arg model)" />
   <param name="use_gui" value="$(arg gui)"/>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find p3dx_navigation)/config/navigation.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find p3dx_navigation)/config/p3dx_gazebo/navigation.rviz" />
 
    <!-- Run the map server -->
    <node name="map_server" pkg="map_server" type="map_server" args="$(find p3dx_navigation)/maps/wgmap.yaml" output="screen"/>
