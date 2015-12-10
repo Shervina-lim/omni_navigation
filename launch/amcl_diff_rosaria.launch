@@ -30,26 +30,26 @@
   <!--How many evenly-spaced beams in each scan to be used when updating the filter. -->
   <param name="laser_max_beams" value="90"/>
   <!--Mixture weight for the z_hit part of the model. -->
-  <param name="laser_z_hit" value="0.95"/>
+  <param name="laser_z_hit" value="0.7"/>
   <!--Mixture weight for the z_rand part of the model. -->
-  <param name="laser_z_rand" value="0.05"/>
+  <param name="laser_z_rand" value="0.3"/>
   <!--Standard deviation for Gaussian model used in z_hit part of the model. -->
   <param name="laser_sigma_hit" value="0.02"/>  
   <!-- Maximum distance to do obstacle inflation on map, for use in likelihood_field model. -->
-  <param name="laser_likelihood_max_dist" value="0.3"/>
+  <param name="laser_likelihood_max_dist" value="1.0"/>
 
 
   <!-- Odometery model parameters -->
   <!--Which model to use, either "diff" or "omni". -->
   <param name="odom_model_type" value="diff"/>
   <!-- Noise in odometry is rotation estimate from the rotational component of the robot is motion-->
-  <param name="odom_alpha1" value="0.05"/>
+  <param name="odom_alpha1" value="0.2"/>
   <!-- Noise in odometry is rotation estimate from translational component of the robotis  motion-->
-  <param name="odom_alpha2" value="0.05"/>
+  <param name="odom_alpha2" value="0.1"/>
   <!-- Noise in odometry is translation estimate from the translational component of the robot is motion-->
-  <param name="odom_alpha3" value="0.02"/>
+  <param name="odom_alpha3" value="0.2"/>
   <!-- Noise in odometry is translation estimate from the rotational component of the robot is motion-->
-  <param name="odom_alpha4" value="0.05"/>
+  <param name="odom_alpha4" value="0.1"/>
 
 </node>
 </launch>

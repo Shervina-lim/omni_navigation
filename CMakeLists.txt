@@ -9,6 +9,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  move_base_msgs 
+  actionlib
 )
 
 ## System dependencies are found with CMake's conventions
@@ -187,3 +189,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(sendPose src/sendPose.cpp)
+target_link_libraries(sendPose ${catkin_LIBRARIES})
