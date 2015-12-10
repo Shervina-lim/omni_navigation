@@ -2,12 +2,23 @@
 ROS package navigation to Pioneer P3-DX
 
 ## Install
-Clone the package folder
+- Clone the package folder
 
 		$ cd ~/catkin_ws/src
 		$ git clone https://github.com/LCAD-UFES/p3dx_navigation.git
 		$ cd ..
 		$ catkin_make
+
+- Install rosaria
+
+		$ cd ~/catkin_ws/src
+		$ git clone https://github.com/amor-ros-pkg/rosaria.git
+		$  cd ..
+		$ catkin_make
+
+- Install sicktoolbox-wrapper
+
+		$ sudo apt-get install ros-{version}-sicktoolbox-wrapper
 
 ## Simulation
 To run simulation

@@ -21,7 +21,7 @@ int main(int argc, char** argv){
   goal.target_pose.header.frame_id = "map";
   goal.target_pose.header.stamp = ros::Time::now();
   //entrada do ct-9 12.432 1.699
-  goal.target_pose.pose.position.x = 12.432;
+  goal.target_pose.pose.position.x = 11.432;
   goal.target_pose.pose.position.y = 1.699;
   goal.target_pose.pose.orientation.w = 1.0;
 
