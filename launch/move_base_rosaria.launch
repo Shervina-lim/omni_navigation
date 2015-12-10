@@ -2,7 +2,7 @@
 <launch>
 
   <!-- Run the map server -->
-   <node name="map_server" pkg="map_server" type="map_server" args="$(find p3dx_navigation)/maps/map_lab.yaml" output="screen"/>
+   <node name="map_server" pkg="map_server" type="map_server" args="$(find p3dx_navigation)/maps/wgmap.yaml" output="screen"/>
 
   <!--- Run AMCL -->
   <include file="$(find p3dx_navigation)/launch/amcl_diff_rosaria.launch" />
