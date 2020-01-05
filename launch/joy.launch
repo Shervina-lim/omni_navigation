@@ -1,0 +1,9 @@
+<launch>
+
+    <!--Run joy-->
+    <node pkg="joy" name="joy_node" type="joy_node" />
+
+    <!--Run Controller-->
+    <node pkg="omni_navigation" name="omniJoyTeleop" type="omniJoyTeleop.py" />
+	
+</launch>
