@@ -1,5 +1,5 @@
 # omni_navigation
-ROS package navigation to omnibot
+ROS package navigation for omnibot
 
 ## Omni_navigation 
 - Clone the package folder
