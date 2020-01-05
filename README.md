@@ -11,18 +11,21 @@ ROS package navigation to omnibot
 
 ## FT sensor
 - Install driver for ATI Mini45 FT sensor (refer to: http://wiki.ros.org/netft_utils)
+
 		$ cd ~/catkin_ws/src
 		$ git clone https://github.com/UTNuclearRoboticsPublic/netft_utils.git
 		$ cd ..
 		$ catkin_make
 
 - Configure network settings
+
 		Ethernet network -> Edit connections -> Wired connection _ (usually is the last one) -> edit -> IPV4 settings
 		set method to manual 
 		Address: 192.168.1.100
 		Subnet mask: 255.255.255.0
 
 - Launching FT node
+
 		$ rosrun netft_utils netft_node 192.168.1.1
 		$ rostopic echo /netft_data		
 
