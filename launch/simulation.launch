@@ -29,6 +29,7 @@
   <!-- spawn robot -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot -param robot_description -model omnibase -z $(arg height)" ns="omnibase" />
    
+<<<<<<< HEAD
   <!-- publish sensors tf and odom --> 
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" ns="omnibase">
       <!--<param name="publish_frequency" type="double" value="30.0" />
@@ -36,13 +37,24 @@
    </node>
 
 
+=======
+  <!-- run controllers -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" ns="omnibase">
+      <!--<param name="publish_frequency" type="double" value="30.0" />-->
+      <remap from="/joint_states" to="/omnibase/joint_states" />
+   </node>
+>>>>>>> 8658b3669b4712ad9a157e81d906397774eae095
 <!--=======Iniciar RVIZ=============-->
   <arg name="model" default="$(find omni_description)/xacro/omni.urdf.xml"/>
   <param name="robot_description" textfile="$(arg model)" />
   <param name="use_gui" value="$(arg gui)"/>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find omni_navigation)/config/omni_gazebo/navigation.rviz" />
 
+<<<<<<< HEAD
    <!-- Run the map server-->
+=======
+   <!-- Run the map server -->
+>>>>>>> 8658b3669b4712ad9a157e81d906397774eae095
    <node name="map_server" pkg="map_server" type="map_server" args="$(find omni_navigation)/maps/wgmap.yaml" output="screen"/>
 
 </launch>

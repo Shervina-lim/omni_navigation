@@ -1,5 +1,6 @@
 <launch>
 
+<<<<<<< HEAD
     <!--Run joy
     <node pkg="joy" name="joy_node" type="joy_node" />-->
 
@@ -9,5 +10,12 @@
     <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen">
     <remap from="/cmd_vel" to="/omnibase/cmd_vel" />
     </node>
+=======
+    <!--Run joy-->
+    <node pkg="joy" name="joy_node" type="joy_node" />
+
+    <!--Run Controller-->
+    <node pkg="omni_navigation" name="omniJoyTeleop" type="omniJoyTeleop.py" />
+>>>>>>> 8658b3669b4712ad9a157e81d906397774eae095
 	
 </launch>
