@@ -29,6 +29,7 @@ ROS package navigation to omnibot
 
 ## Laserscan Merger
 - Install ira_laser_tools to merge laserscans from both lidars (refer to: http://wiki.ros.org/ira_laser_tools)
+
 		$ cd ~/catkin_ws/src
 		$ git clone https://github.com/iralabdisco/ira_laser_tools.git
 		$ cd ..
