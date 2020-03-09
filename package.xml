@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>p3dx_navigation</name>
+  <name>omni_navigation</name>
   <version>0.0.0</version>
-  <description>The p3dx_navigation package</description>
+  <description>The omni_navigation package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
@@ -46,17 +46,18 @@
   <build_depend>std_msgs</build_depend>
   <build_depend>move_base_msgs</build_depend>
   <build_depend>actionlib</build_depend>
+  <build_depend>tactile_layer</build_depend>
   <run_depend>move_base_msgs</run_depend>
   <run_depend>actionlib</run_depend>
   <run_depend>move_base</run_depend>
   <run_depend>roscpp</run_depend>
   <run_depend>rospy</run_depend>
-  <run_depend>std_msgs</run_depend>
+  <run_depend>std_msgs</run_depend> 
+  <run_depend>tactile_layer</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <!-- Other tools can request additional information be placed here -->
-
+    <tactile_layer plugin="${prefix}/costmap_plugins.xml" />
   </export>
 </package>

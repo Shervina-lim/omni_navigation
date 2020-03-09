@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(p3dx_navigation)
+project(omni_navigation)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   move_base_msgs 
   actionlib
+  tf
 )
 
 ## System dependencies are found with CMake's conventions

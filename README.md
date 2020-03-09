@@ -1,7 +1,7 @@
-# p3dx_navigation
-ROS package navigation to Pioneer P3-DX
+# omni_navigation
+ROS package navigation to omnibot
 
-## Install
+## Omni_navigation 
 - Clone the package folder
 
 		$ cd ~/catkin_ws/src
@@ -9,36 +9,38 @@ ROS package navigation to Pioneer P3-DX
 		$ cd ..
 		$ catkin_make
 
-- Install rosaria
-
+## FT sensor
+- Install driver for ATI Mini45 FT sensor (refer to: http://wiki.ros.org/netft_utils)
 		$ cd ~/catkin_ws/src
-		$ git clone https://github.com/amor-ros-pkg/rosaria.git
-		$  cd ..
+		$ git clone https://github.com/UTNuclearRoboticsPublic/netft_utils.git
+		$ cd ..
 		$ catkin_make
 
-- Install sicktoolbox-wrapper
+- Configure network settings
+		Ethernet network -> Edit connections -> Wired connection _ (usually is the last one) -> edit -> IPV4 settings
+		set method to manual 
+		Address: 192.168.1.100
+		Subnet mask: 255.255.255.0
 
-		$ sudo apt-get install ros-{version}-sicktoolbox-wrapper
+- Launching FT node
+		$ rosrun netft_utils netft_node 192.168.1.1
+		$ rostopic echo /netft_data
+
+## Laserscan Merger
+- Install ira_laser_tools to merge laserscans from both lidars (refer to: http://wiki.ros.org/ira_laser_tools)
+		$ cd ~/catkin_ws/src
+		$ git clone https://github.com/iralabdisco/ira_laser_tools.git
+		$ cd ..
+		$ catkin_make
 
 ## Simulation
 To run simulation
 
-		$ roslaunch p3dx_navigation simulation.launch
+		$ roslaunch omni_navigation simulation.launch
 
 and another terminal
 
-		$ roslaunch p3dx_navigation move_base_gazebo.launch
+		$ roslaunch omni_navigation move_base_eband.launch
 
-## Real robot
-1. Connect the pioneer in USB port, then the laser sick.
-
-2. Open 3 terminal
-
-		$ sudo chmod 777 /dev/ttyUSB*
-		$ roslaunch p3dx_navigation pioneer.launch
-		$ roslaunch p3dx_navigation rviz_p3dx.launch
-		$ roslaunch p3dx_navigation move_base_rosaria.launch
-
----
 
 Learn more about using the ROS navigation stack at http://wiki.ros.org/navigation
