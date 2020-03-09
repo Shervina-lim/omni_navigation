@@ -17,6 +17,7 @@ ROS package navigation to omnibot
 		$ catkin_make
 
 - Configure network settings
+
 		Ethernet network -> Edit connections -> Wired connection _ (usually is the last one) -> edit -> IPV4 settings
 		set method to manual 
 		Address: 192.168.1.100
