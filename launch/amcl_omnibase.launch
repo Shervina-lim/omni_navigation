@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <launch>
-
+   <!-- Run the map server 
+   <node name="map_server" pkg="map_server" type="map_server" args="$(find omni_navigation)/maps/map1.yaml" output="screen"/>-->
+  
   <node pkg="amcl" type="amcl" name="amcl" output="screen">
   <!--Translational movement required before performing a filter update.--> 
   <param name="update_min_d" value="0.1"/>
@@ -18,7 +20,7 @@
   <!--Initial pose covariance (yaw*yaw), used to initialize filter with Gaussian distribution. -->
   <param name="initial_cov_aa" value="0.02"/>
   <!--When set to true, AMCL will subscribe to the map topic rather than making a service call to receive its map. New in navigation XXXX-->
-  <param name="use_map_topic" value="false"/>
+  <param name="use_map_topic" value="true"/>
 
 
   <!--Laser model parameters-->

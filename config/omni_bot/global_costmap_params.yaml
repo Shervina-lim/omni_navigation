@@ -1,16 +1,18 @@
 global_costmap:
-  global_frame: /map #The global frame for the costmap to operate in. 
-  robot_base_frame: /base_link #The name of the frame for the base link of the robot. 
-  update_frequency: 2.5 #The frequency in Hz for the map to be updated.
-  publish_frequency: 1.0 #The frequency in Hz for the map to be publish display information. 
-  static_map: true
+      footprint_padding: 0.01
+      publish_frequency: 1.0
+      resolution: 0.02
+      robot_radius: 0.13
+      state: true
+      update_frequency: 2.5
+      width: 10
+      transform_tolerance: 0.5
+      origin_x: -5.0
+      origin_y: 1.0
 
-  plugins:
-        - {name: footprint_layer, type: "costmap_2d::FootprintLayer"}
-        - {name: static_map_layer, type: "costmap_2d::StaticLayer"}
-        - {name: obstacle_layer,  type: "costmap_2d::VoxelLayer"}
-        - {name: inflation_layer,   type: "costmap_2d::InflationLayer"}  
-        - {name: tactile_layer,   type: "tactile_layer_namespace::TactileLayer"}    
-        - {name: tactile_grid_layer,   type: "tactile_layer_namespace::GridLayer"}   
-
-# More information at http://wiki.ros.org/costmap_2d and http://wiki.ros.org/costmap_2d/flat 
+plugins:  
+#        - {name: footprint_layer,   type: "costmap_2d::FootprintLayer"}   
+        - {name: inflation_layer,   type: "costmap_2d::InflationLayer", output: "screen"}   
+        - {name: static_map,   type: "costmap_2d::StaticLayer", output: "screen"}   
+        - {name: obstacle_layer,   type: "costmap_2d::ObstacleLayer"}   
+        

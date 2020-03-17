@@ -44,5 +44,12 @@ and another terminal
 
 		$ roslaunch omni_navigation move_base_eband.launch
 
+Config and move base parameter files are in config/omni_gazebo 
+## Real robot
+
+		$ roslaunch omni_navigation move_base_omnibase.launch
+
+Config and move base parameter files are in config/omni_bot 
+
 
 Learn more about using the ROS navigation stack at http://wiki.ros.org/navigation

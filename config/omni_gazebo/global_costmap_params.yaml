@@ -5,7 +5,6 @@ global_costmap:
   publish_frequency: 1.0 #The frequency in Hz for the map to be publish display information. 
   static_map: true
 
+
 # More information at http://wiki.ros.org/costmap_2d and http://wiki.ros.org/costmap_2d/flat
 
-#        - {name: tactile_layer,   type: "tactile_layer_namespace::TactileLayer", output: "screen"}    
-#        - {name: tactile_grid_layer,   type: "tactile_layer_namespace::GridLayer", output: "screen"}   
