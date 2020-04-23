@@ -10,12 +10,15 @@
    <arg name="headless" default="false" />
    <arg name="paused" default="true" />
    <arg name="use_sim_time" default="true" />
-   <arg name="height" default="0" />
+   <arg name="height" default="0.1" />
 
    <!-- We resume the logic in empty_world.launch, changing only the name of 
         the world to be launched -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="world_name" value="$(find omni_gazebo)/worlds/omni.world" />
+      <!--arg name="world_name" value="$(find omni_gazebo)/worlds/omni.world" /-->
+      <arg name="world_name" value="$(find soss_simulation)/worlds/dp1_static.world" />
+      <env name="GAZEBO_MODEL_PATH" value="$(find soss_simulation)/models:$(find soss_simulation)/servicesim_models" />
+      <env name="GAZEBO_RESOURCE_PATH" value="$(find soss_simulation)/media:$(find soss_simulation)" />
       <arg name="debug" value="$(arg debug)" />
       <arg name="gui" value="$(arg gui)" />
       <arg name="paused" value="$(arg paused)" />
@@ -27,22 +30,22 @@
     <param name="robot_description"
         command="$(find xacro)/xacro.py '$(find omni_description)/xacro/omni.urdf.xacro'" />
   <!-- spawn robot -->
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot -param robot_description -model omnibase -z $(arg height)" ns="omnibase" />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot -param robot_description -model omnibase -x 10 -y -13 -z $(arg height)" ns="omnibase" />
    
   <!-- publish sensors tf and odom --> 
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" ns="omnibase">
       <!--<param name="publish_frequency" type="double" value="30.0" />
       <remap from="/joint_states" to="/omnibase/joint_states" />-->
-   </node>
+    </node>
 
 
-<!--=======Iniciar RVIZ=============-->
+  <!--=======Iniciar RVIZ=============-->
   <arg name="model" default="$(find omni_description)/xacro/omni.urdf.xml"/>
   <param name="robot_description" textfile="$(arg model)" />
   <param name="use_gui" value="$(arg gui)"/>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find omni_navigation)/config/omni_gazebo/navigation.rviz" />
 
-   <!-- Run the map server-->
+  <!-- Run the map server-->
    <node name="map_server" pkg="map_server" type="map_server" args="$(find omni_navigation)/maps/wgmap.yaml" output="screen"/>
 
 </launch>
