@@ -5,6 +5,8 @@ global_costmap:
   publish_frequency: 1.0 #The frequency in Hz for the map to be publish display information. 
   static_map: true
 
+inflation_layer:
+  inflation_radius: 0.55
 
 # More information at http://wiki.ros.org/costmap_2d and http://wiki.ros.org/costmap_2d/flat
 
