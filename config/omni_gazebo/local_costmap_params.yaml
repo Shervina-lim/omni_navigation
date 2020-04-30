@@ -11,9 +11,12 @@ local_costmap:
   resolution: 0.02 #The resolution of the map in meters/cell. 
 
   plugins: 
-        - {name: tactile_layer,   type: "tactile_layer_namespace::TactileLayer", output: "screen"}   
-
-
+        - {name: static_layer, type: "costmap_2d::StaticLayer", output: "screen"} 
+        - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer", output: "screen"}
+        - {name: inflation_layer, type: "costmap_2d::InflationLayer", output: "screen"} 
+        - {name: tactile_layer,   type: "tactile_layer_namespace::TactileLayer", output: "screen"}
 
 # More information at http://wiki.ros.org/costmap_2d and http://wiki.ros.org/costmap_2d/flat
 
+inflation_layer:
+  inflation_radius: 0.1

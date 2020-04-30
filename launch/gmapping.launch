@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<launch>
+
+   <!-- Run laser merger -->
+   <include file="$(find omni_navigation)/launch/laserscan_merger.launch" />
+
+   <!-- Gmapping -->
+   <node name="gmapping" pkg="gmapping" type="slam_gmapping" output="screen"/>
+
+   <!-- Joystick -->
+   <node name="joy" pkg="joy" type="joy_node" output="screen"/>
+
+   <!-- Joy Control -->
+   <node name="joy_control" pkg="omni_navigation" type="joy_control.py" output="screen"/>
+
+</launch>
