@@ -1,13 +1,21 @@
 # omni_navigation
 ROS package navigation to omnibot. Do make sure that Ros-navigation is installed.
+
+
 - Ros Navigation
+
 		$ sudo apt-get install ros-kinetic-navigation
 
 If you are using teb or eband planner, do install them too
+
 - EBand local planner
+
 		$ sudo apt-get install ros-kinetic-eband-local-planner
+		
 - TEB local planner
+
 		$ sudo apt-get install ros-kinetic-teb-local-planner
+		
 ## Omni_navigation 
 - Clone the package folder
 
