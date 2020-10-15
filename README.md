@@ -20,7 +20,7 @@ If you are using teb or eband planner, do install them too
 - Clone the package folder
 
 		$ cd ~/catkin_ws/src
-		$ git clone https://github.com/LCAD-UFES/p3dx_navigation.git
+		$ git clone https://github.com/Shervina-lim/omni_navigation.git
 		$ cd ..
 		$ catkin_make
 
