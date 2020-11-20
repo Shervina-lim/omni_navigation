@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<launch>
+
+   <!-- Run the map server -->
+   <node name="map_server" pkg="map_server" type="map_server" args="$(find omni_navigation)/maps/corridor.yaml" output="screen"/>
+  
+   <!--- Run AMCL -->
+   <include file="$(find omni_navigation)/launch/amcl_omnibase.launch" />
+
+   <!--- Run Joy controller -->
+   <include file="$(find omni_navigation)/launch/joy.launch" />
+
+   <!-- <node name="amcl" pkg="amcl" type="amcl" output="screen"/> -->
+  
+   <!--- Run move_base with parameters -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find omni_navigation)/config/omni_bot/costmap_common_params.yaml" command="load" ns="global_costmap" />
+
+    <rosparam file="$(find omni_navigation)/config/omni_bot/costmap_common_params.yaml" command="load" ns="local_costmap" />
+
+    <rosparam file="$(find omni_navigation)/config/omni_bot/local_costmap_params.yaml" command="load" />
+
+    <rosparam file="$(find omni_navigation)/config/omni_bot/global_costmap_params.yaml" command="load" />
+
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+    <rosparam file="$(find omni_navigation)/config/omni_bot/base_local_planner.yaml" command="load" />
+  <remap from="cmd_vel" to="/omnibase/cmd_vel"/>
+  <remap from="odom" to="odom"/>		
+  </node>
+
+<!--=======Iniciar RVIZ=============-->
+  <!--<arg name="model" default="$(find omni_description)/xacro/omni.urdf.xml"/>
+  <param name="robot_description" textfile="$(arg model)" />-->
+  <param name="use_gui" value="true"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find omni_navigation)/config/omni_bot/rviz/base.rviz" />
+</launch>

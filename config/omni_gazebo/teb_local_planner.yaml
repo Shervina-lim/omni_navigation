@@ -1,33 +1,31 @@
 TebLocalPlannerROS:
 
  # Trajectory
-  
  teb_autosize: True
  dt_ref: 0.3
  dt_hysteresis: 0.1
  global_plan_overwrite_orientation: True
     
  # Robot
- max_vel_x: 0.5
- max_vel_x_backwards: 0.2
- max_vel_theta: 0.3
- acc_lim_x: 0.5
- acc_lim_theta: 0.5
- max_vel_y: 0.5
- acc_lim_y: 0.5
+ max_vel_x: 1.0
+ max_vel_x_backwards: 1.0
+ max_vel_theta: 1.0
+ acc_lim_x: 2.5
+ acc_lim_theta: 2.5
+ max_vel_y: 1.0
+ acc_lim_y: 2.5
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
    type: "circular"
-   radius: 0.2 # for type "circular"
+   radius: 0.3 # for type "circular"
 
- # GoalTolerance
-    
- xy_goal_tolerance: 0.2
- yaw_goal_tolerance: 0.1
+ # Goal Tolerance   
+ xy_goal_tolerance: 0.3
+ yaw_goal_tolerance: 3.14
  free_goal_vel: False
     
  # Obstacles
-    
- min_obstacle_dist: 0.4
+ min_obstacle_dist: 0.1
+ inflation_dist: 0.0
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 30
@@ -35,8 +33,7 @@ TebLocalPlannerROS:
  costmap_converter_spin_thread: True
  costmap_converter_rate: 5
 
- # Optimization
-    
+ # Optimization   
  no_inner_iterations: 5
  no_outer_iterations: 4
  optimization_activate: True
@@ -55,7 +52,6 @@ TebLocalPlannerROS:
  alternative_time_cost: False # not in use yet
 
  # Homotopy Class Planner
-
  enable_homotopy_class_planning: True
  enable_multithreading: True
  simple_exploration: False

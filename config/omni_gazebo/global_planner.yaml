@@ -1,0 +1,21 @@
+NavfnROS:
+# Have to be initialised here
+
+  allow_unknown: true # allow planner to create path in unknown areas
+  default_tolerance: 0.0 #
+  visualise_potential: false # to visualise potential area via PointCloud2
+  use_dijkstra: true # false = A*
+  use_qudratic: true # enable quadratic approximation of the potential, false = simple calculation 
+  use_grid_path: false #create path that follows grid boundaries, false = gradient descent method
+  old_navfn_behaviour: false # mirroring behaviour of navfn
+
+# In dyanamic reconfigure
+# costs parameters
+  lethal_cost: 253 
+  neutral_cost: 50
+  cost_factor: 3
+  publish_potential: true 
+# How to set the orientation of each point (None=0, Forward=1, Interpolate=2,     ForwardThenInterpolate=3, Backward=4, Leftward=5, Rightward=6) 
+  orientation_mode: 0 
+# What window to use to determine the orientation based on the position derivative specified by the orientation mode
+  orientation_window_size: 1 

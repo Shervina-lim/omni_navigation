@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<launch>
+   <!-- Run the map server -->
+   <node name="map_server" pkg="map_server" type="map_server" args="$(find omni_navigation)/maps/wgmap.yaml" output="screen" />
+   <!-- Run laser merger -->
+   <include file="$(find omni_navigation)/launch/laserscan_merger.launch" />
+   <!--- Run AMCL -->
+   <include file="$(find omni_navigation)/launch/amcl_omni_gazebo.launch" />
+   <!-- <node name="amcl" pkg="amcl" type="amcl" output="screen"/> -->
+   <!--- Run move_base with parameters -->
+   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+      <rosparam file="$(find omni_navigation)/config/omni_gazebo/costmap_common_params.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find omni_navigation)/config/omni_gazebo/costmap_common_params.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find omni_navigation)/config/omni_gazebo/local_costmap_params.yaml" command="load" />
+      <rosparam file="$(find omni_navigation)/config/omni_gazebo/global_costmap_params.yaml" command="load" />
+      <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+      <rosparam file="$(find omni_navigation)/config/omni_gazebo/teb_local_planner.yaml" command="load" />
+     <param name="controller_frequency" value="5.0"/>
+      <remap from="cmd_vel" to="/omnibase/cmd_vel" />
+      <remap from="odom" to="odom" />
+   </node>
+   <!-- Iniciar RVIZ -->
+   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find omni_navigation)/config/omni_gazebo/navigation.rviz" />
+
+</launch>
+
+

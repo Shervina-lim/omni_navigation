@@ -1,18 +1,30 @@
 global_costmap:
-      footprint_padding: 0.01
+# for melodic, tf2
+      global_frame: map #The global frame for the costmap to operate in. 
+      robot_base_frame: base_link #The name of the frame for the base link of the robot. 
+
+#      footprint_padding: 0.01
+# global map parameters
+#      static_map: true
       publish_frequency: 1.0
-      resolution: 0.02
-      robot_radius: 0.13
-      state: true
+# init in common costmap params
+#      resolution: 0.05
+#      robot_radius: 0.3
+#      state: true
       update_frequency: 2.5
-      width: 10
-      transform_tolerance: 0.5
-      origin_x: -5.0
-      origin_y: 1.0
+#      transform_tolerance: 0.5 #tolerable tf delay
+# map size parameters
+      width: 10.0 #The width of the map in meters. 
+      height: 10.0 #The height of the map in meters. 
+# positioning global map
+#      origin_x: -5.0
+#      origin_y: 1.0
+
+      rolling_window: true #make global costmap centered wrt robot
 
 plugins:  
 #        - {name: footprint_layer,   type: "costmap_2d::FootprintLayer"}   
         - {name: inflation_layer,   type: "costmap_2d::InflationLayer", output: "screen"}   
-        - {name: static_map,   type: "costmap_2d::StaticLayer", output: "screen"}   
+#        - {name: static_map,   type: "costmap_2d::StaticLayer", output: "screen"}   
         - {name: obstacle_layer,   type: "costmap_2d::ObstacleLayer"}   
         

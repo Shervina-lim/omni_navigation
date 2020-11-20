@@ -1,12 +1,14 @@
 # omni_navigation
+This version is compaitable with ROS melodic
+
 ROS package navigation to omnibot. Do make sure that Ros-navigation is installed.
 
 
 - Ros Navigation
 
-		$ sudo apt-get install ros-kinetic-navigation
+		$ sudo apt-get install ros-melodic-navigation
 
-If you are using teb or eband planner, do install them too
+If you plan to use teb or eband planner, do install them too. 
 
 - EBand local planner
 
@@ -17,6 +19,7 @@ If you are using teb or eband planner, do install them too
 		$ sudo apt-get install ros-kinetic-teb-local-planner
 		
 ## Omni_navigation 
+===============================================================================================================
 - Clone the package folder
 
 		$ cd ~/catkin_ws/src
@@ -25,6 +28,7 @@ If you are using teb or eband planner, do install them too
 		$ catkin_make
 
 ## FT sensor
+================================================================================================================
 - Install driver for ATI Mini45 FT sensor (refer to: http://wiki.ros.org/netft_utils)
 		$ cd ~/catkin_ws/src
 		$ git clone https://github.com/UTNuclearRoboticsPublic/netft_utils.git
@@ -43,7 +47,9 @@ If you are using teb or eband planner, do install them too
 		$ rostopic echo /netft_data
 
 ## Laserscan Merger
+================================================================================================================
 - Install ira_laser_tools to merge laserscans from both lidars (refer to: http://wiki.ros.org/ira_laser_tools)
+## Make sure to install the melodic version.
 
 		$ cd ~/catkin_ws/src
 		$ git clone https://github.com/iralabdisco/ira_laser_tools.git
@@ -51,20 +57,23 @@ If you are using teb or eband planner, do install them too
 		$ catkin_make
 
 ## Simulation
+================================================================================================================
+The launch files can be found in launch/omni_gazebo and config files are in config/omni_gazebo
+
 To run simulation
 
 		$ roslaunch omni_navigation simulation.launch
 
 and another terminal
 
-		$ roslaunch omni_navigation move_base_eband.launch
+		$ roslaunch omni_navigation eband.launch
 
-Config and move base parameter files are in config/omni_gazebo 
-## Real robot
 
-		$ roslaunch omni_navigation move_base_omnibase.launch
-
-Config and move base parameter files are in config/omni_bot 
+## Real robot (still testing)
+================================================================================================================
+The launch files can be found in launch/robot and config files are in config/omni_bot
+		
+		$ roslaunch omni_navigation bot_eband.launch
 
 
 Learn more about using the ROS navigation stack at http://wiki.ros.org/navigation
