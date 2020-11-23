@@ -19,7 +19,6 @@ If you plan to use teb or eband planner, do install them too.
 		$ sudo apt-get install ros-kinetic-teb-local-planner
 		
 ## Omni_navigation 
-===============================================================================================================
 - Clone the package folder
 
 		$ cd ~/catkin_ws/src
@@ -28,7 +27,6 @@ If you plan to use teb or eband planner, do install them too.
 		$ catkin_make
 
 ## FT sensor
-================================================================================================================
 - Install driver for ATI Mini45 FT sensor (refer to: http://wiki.ros.org/netft_utils)
 		$ cd ~/catkin_ws/src
 		$ git clone https://github.com/UTNuclearRoboticsPublic/netft_utils.git
@@ -47,7 +45,6 @@ If you plan to use teb or eband planner, do install them too.
 		$ rostopic echo /netft_data
 
 ## Laserscan Merger
-================================================================================================================
 - Install ira_laser_tools to merge laserscans from both lidars (refer to: http://wiki.ros.org/ira_laser_tools)
 ## Make sure to install the melodic version.
 
@@ -57,7 +54,6 @@ If you plan to use teb or eband planner, do install them too.
 		$ catkin_make
 
 ## Simulation
-================================================================================================================
 The launch files can be found in launch/omni_gazebo and config files are in config/omni_gazebo
 
 To run simulation
@@ -70,7 +66,6 @@ and another terminal
 
 
 ## Real robot (still testing)
-================================================================================================================
 The launch files can be found in launch/robot and config files are in config/omni_bot
 		
 		$ roslaunch omni_navigation bot_eband.launch
